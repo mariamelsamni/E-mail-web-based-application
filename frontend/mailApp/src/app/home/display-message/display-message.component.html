@@ -1,0 +1,15 @@
+<div class="bar3">
+	
+
+   <p style="font-size: 20px; margin-left: 20px;"><b>From: {{from}}</b><p>
+  <p style="font-size: 20px; margin-left: 20px"><b>To: {{to}}</b><p>
+	<p style="font-size: 20px; margin-left: 20px"><b>Subject: {{subject}}</b><p>
+	<p style="margin-left:40px">{{message}}</p>
+	<p style="margin-left:20px">Date: {{date}}</p>
+	<p style="margin-left:20px">Importance: {{importance}}</p>
+	<p style="margin-left:20px; display: block;">Attachments: </p>
+	<button *ngFor="let attach of attachs" (click)="openAttach(attach)" style="margin-left:20px; display: block; margin-top: 3px;">
+		<div>{{attach}}</div>
+	</button>
+	
+

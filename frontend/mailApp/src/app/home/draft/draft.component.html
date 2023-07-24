@@ -1,0 +1,54 @@
+<div class="bar3">
+    <div>
+		
+		<!-- <form>
+			<label style="margin-left: 25px;" for="pin">From:</label>
+			<input style="margin-left:35px ;" type="text"   value={{from}} />
+		  </form> -->
+
+		  <form >
+			<label style="margin-left: 25px;" for="pin">To:</label>
+			<input style="margin-left:55px ;" type="text" id="to" value={{to}} />
+		  </form>
+		 
+		
+	
+			<form>
+				<label style="margin-left: 25px;" for="pin">Subject:</label>
+			  <input style="margin-left:20px ;" type="text" id="subject"  value={{subject}} />
+			</form>
+			<div class="rate">
+				<input type="radio" id="star4" name="rate" value="4" (click)="setImp(4)"/>
+				<label for="star4" title="text">4 stars</label>
+				<input type="radio" id="star3" name="rate" value="3" (click)="setImp(3)"/>
+				<label for="star3" title="text">3 stars</label>
+				<input type="radio" id="star2" name="rate" value="2" (click)="setImp(2)"/>
+				<label for="star2" title="text">2 stars</label>
+				<input type="radio" id="star1" name="rate" value="1" (click)="setImp(1)"/>
+				<label for="star1" title="text">1 star</label>
+			  </div>
+
+			  
+			  <form>
+				<textarea id="path" aria-label="body" placeholder="message" style="align-items: center; border-width: 2px; margin-bottom: 10px; width: -webkit-fill-available;" id="message" rows="20" cols="110">{{message}}</textarea>
+				<br>
+		
+			  </form>
+			  <!-- <input  style="height: 550px; width: 700px; margin-left:25PX ;" type="file" id="myfile" value="src" required [(ngModel)]="form.pdf" observeFiles>
+	    -->
+
+
+		<!-- style="margin-left: 10px;" -->
+	<div>
+	 <button (click)="attach()" class="attach"  style="margin-left:5px ;height: 33px; width: 80px; border-color: rgb(rgb(9, 0, 126)); color:rgb(15, 0, 101); border-radius: 10px; background-color: rgb(255, 255, 255); font-size: 20px;" >Attach</button>
+	</div>
+	<div *ngFor="let attach of attachs" style="margin-left: 8px; margin-top: 10px; ">
+		<button  (click)="del(attach)" style="margin-right: 2px;">del</button>
+		<button   (click)="openAttach(attach)" >{{attach}}</button>
+	</div>
+	
+	</div>
+	<button  style="height: 33px; width: 80px; border-color: rgb(rgb(9, 0, 126)); color:rgb(15, 0, 101); border-radius: 10px;" class="ss" (click)="save()">Save</button> 	
+	<button  style="right:95px ; height: 33px; width: 80px; border-color: rgb(rgb(9, 0, 126)); color:rgb(15, 0, 101); border-radius: 10px;" class="send"  (click)="send()">Send</button> 	  
+       
+</div>

@@ -1,0 +1,23 @@
+.bar3::-webkit-scrollbar { width: 0 !important }
+.bar3{
+    height: 97.5%;
+    width: 58%;
+    position: fixed;
+    left: 41.2%;
+    margin: 2px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+}
+.subject {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+#star{
+    color: white;
+}
+.button
+{
+
+    background-color: blue;
+    color: blue;
+}

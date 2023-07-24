@@ -1,0 +1,39 @@
+<div class="bar1">
+    <div class="label" (click)="navigateTo()">
+        Name: {{user}}
+    </div>
+    <!-- <div class="button" (click)="logOut()">
+        Log out
+    </div> -->
+    <div class="button" (click)="navigateTo()">
+        New message
+    </div>
+    <div class="label">
+        Folders
+        <div class="plus" (click)="addFolder()">+</div>
+    </div>
+
+    <div *ngFor="let folder of folders" class="button" (click)="folderClicked(folder)">
+        {{folder}}
+    </div>
+    <div class="label">
+        Contacts
+        <div class="plus" (click)="addContact()">+</div>
+    </div>
+    <div *ngFor="let contact of contacts" style="display: inline-flex;">
+        <div class="button" style="width: 120px;">{{contact}}</div>
+        <div>
+            <button (click)="dropDown(contacts.indexOf(contact))" class="dropbtn">E</button>
+            <div id="drop{{contacts.indexOf(contact)}}" class="dropdown-content">
+                <a *ngFor="let email of emails" (click)="emailsFunction(email,contacts.indexOf(contact))">{{email}}</a>
+            </div>
+        </div>
+        <div class="plus1" (click)="deleteContact(contacts.indexOf(contact))" style="position: relative; top: 10px;"><i class="far fa-trash-alt"></i></div>
+        <!-- <div class="plus1" (click)="editContact(contacts.indexOf(contact))" style="position: relative; top: 10px;">E</div> -->
+        
+    </div>
+    <div class="button" (click)="logOut()">
+        Log out
+    </div>
+    
+</div>

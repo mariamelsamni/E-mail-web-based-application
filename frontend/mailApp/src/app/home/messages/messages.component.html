@@ -1,0 +1,80 @@
+<div class="bar2">
+    
+    <div class="navbar">
+        <div class="searchButton" (click)="toggle()"><i class="fas fa-tasks"></i></div>
+        <div [hidden]="flag">
+            
+            <input type="search" placeholder="Search" id="searchBox">
+            <div class="searchButton" (click)="search()"><i class='fas fa-search'></i></div>
+            <div class="searchButton" (click)="refresh()"><i class='fas fa-sync-alt'></i></div>
+            <div class="dropdown">
+                <button (click)="showSort()" class="dropbtn">Sort by</button>
+                <div id="myDropdown0" class="dropdown-content">
+                  <a *ngFor="let sortOption of sortOptions" (click)="sort(sortOption)">{{sortOption}}</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button (click)="filterToggle()" class="dropbtn">Filter</button>
+            </div>
+            <div [hidden]="filterFlag">
+                <div class="dropdown">
+                    <button (click)="showCategory()" class="dropbtn">category</button>
+                    <div id="myDropdown1" class="dropdown-content">
+                      <a >
+                        <input type="checkbox" (click)="categoryFunction('senders')">
+                        senders</a>
+                      <a>
+                        <input type="checkbox" (click)="categoryFunction('subjects')">
+                        subject</a>
+                    </div>
+                  </div>
+                <div class="dropdown">
+                    <button (click)="showSubjectFilter()" class="dropbtn"> Subject </button>
+                    <div id="myDropdown3" class="dropdown-content">
+                        <a *ngFor="let subject of subjects" >
+                            <input type="checkbox" (click)="subjectFunction(subject)">
+                            {{subject}}</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button (click)="showContactFilter()" class="dropbtn">Senders</button>
+                    <div id="myDropdown4" class="dropdown-content">
+                        <a *ngFor="let contact of contacts">
+                            <input type="checkbox" (click)="contactFunction(contact)">
+                            {{contact}}</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" (click)="submitFilter()">Apply</button>
+                </div>
+            </div>
+        </div>
+            <div [hidden]="!flag">
+                <div class="dropdown">
+                    <button (click)="showMoveTo()" class="dropbtn">Move to</button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a *ngFor="let folder of folders" (click)="move(folder)">{{folder}}</a>
+                    </div>
+                </div>
+            <div class="searchButton" (click)="delete()"><i class="far fa-trash-alt"></i></div>
+            <div class="searchButton" (click)="unread()"><i class="fas fa-envelope"></i></div>
+            <div class="searchButton" (click)="read()"><i class="fas fa-envelope-open"></i></div>
+        </div>
+        
+        
+        
+    </div>
+    <div *ngFor="let message of messages" class="button" [class.read] = !message.read>
+        <input type="checkbox"  (click)="checkBox(messages.indexOf(message))" class="checkboxes" [hidden]="!flag">
+        <div (click)="displayMessage(message)">
+            <div class="photo"><i class='fas fa-user-alt'></i></div>
+            <div class="container">
+                <div class="from">{{message.from}}</div>
+                <div class="subject">{{message.subject}}</div>
+                <div class="body">
+                    {{message.body}}
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
