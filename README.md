@@ -59,7 +59,7 @@ email).
   used to make sure that the database class has only one instance to 
   provide a global access point to this instance.
 ##### 3. Filter design pattern:
-  used simply to implement filter feat.
+  used simply to implement filter feature.
 ##### 4. Builder design pattern:
   used to build an object of type user with a different 
   number of attributes.
